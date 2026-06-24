@@ -1,4 +1,5 @@
 let rawVisible = false;
+const DEFAULT_API = 'https://bfhl-api-vert-iota.vercel.app/bfhl';
 
 function toggleRaw() {
   rawVisible = !rawVisible;
@@ -6,7 +7,7 @@ function toggleRaw() {
 }
 
 async function submit() {
-  const apiUrl = document.getElementById('apiUrl').value.trim();
+  const apiUrl = (document.getElementById('apiUrl').value || '').trim() || DEFAULT_API;
   const raw = document.getElementById('inputData').value;
   const errorBox = document.getElementById('errorBox');
   const responseDiv = document.getElementById('response');
